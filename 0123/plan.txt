@@ -1,0 +1,158 @@
+Lab stuff:
+  call convention
+  show gcc compile
+  what if need to jump to further address
+  show AS assemble
+
+Assignment stuff:
+- 2's complement
+  circular number line
+  negative
+  base conversions
+- other questions
+- Q8 (memory operation)
+
+- What How Why
+80-20 rule:
+80% programmer knows (just) what they doing
+without knowing how...
+
+20% knows not just what things happens,
+but also "how" things happens, 
+
+What:
+ What is procedure call?
+ What is `jalr` `jal`
+
+How:
+ how does jalr make procedure calls happen?
+
+Why:
+ Why? Why not?
+
+
+Conventions:
+1. 
+If i design main by myself: when i calls `foo`, 
+1st arg on `s0`, 2nd arg on `t6`, 3rd arg on `a5`.
+
+2.
+when i do `foo`, i knows that the 
+1st arg on `s0`, 2nd arg on `t6`, 3rd arg on `a5`.
+
+
+TERRIBLE IDEA.
+
+OTHERS CAN NOT USE YOUR CODE!!!!
+
+
+have a convention that EVERYONE AGREES on.
+
+a0-a7: are for arguments
+
+a0-a1: is for return value.
+
+
+
+TYPES:
+
+`sw t0, 0(t1)`
+
+sw    -> S type
+RS1   -> t1 -> x6 -> 00110
+imme  -> 0 
+RD    -> t0 -> x5 -> 00101
+
+
+sw -> opcode: 0100011, func3: 010
+
+imme[11:5] | rs2 (rd) | rs1 | func3 | imme[4:0] | opc 
+
+0000000 | 00101 | 00110 | 010 | 00000 | 0100011
+
+
+0000 0000 0101 0011 0010 0000 0010 0011
+
+0    0    5    3    2    0    2   3
+
+0x 0053 2023
+-------------------------------------
+Assemble the code and use objdump to view the instructions in elf.
+
+```bash
+➜  0123 cat instructions.S
+.section .text
+
+.globl _start
+_start:
+sw t0, 0(t1)
+beq t1, t2, match
+lui t1, 100000 #in hex would be 0x 01 86A0
+jal zero, done
+match: xor t0, t0, t0
+done:  addi t3, t1, 10
+
+➜  0123 riscv64-unknown-elf-as -march=rv32i -mabi=ilp32 -o instructions.o instructions.S
+➜  0123 riscv64-unknown-elf-objdump instructions.o -D
+
+instructions.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:   00532023                sw      t0,0(t1)
+   4:   00730663                beq     t1,t2,10 <match>
+   8:   186a0337                lui     t1,0x186a0
+   c:   0080006f                j       14 <done>
+
+00000010 <match>:
+  10:   0052c2b3                xor     t0,t0,t0
+
+00000014 <done>:
+  14:   00a30e13                add     t3,t1,10 # 186a000a <done+0x1869fff6>
+
+Disassembly of section .riscv.attributes:
+
+-------------------------------------
+
+reverse:
+0x 0073 0663
+
+0000 0000 0111 0011 0000 0110 0110 0011
+opcode: 110 0011 = SB type
+immediate[4:1|11]: 0110 0
+func3: 000
+rs1: 00110
+rs2: 00111
+immediate[12|10:5]: 000....
+
+opcode + func3 -> beq
+
+rs1: x6 = t1
+rs2: x7 = t2
+
+immediate:
+[n'th bit]
+ value
+
+[12] [11] [10] [09] [08] [07]
+ 0    0    0    0    0    0
+
+
+[06] [05] [04] [03] [02] [01] 
+ 0    0    0    1    1    0   
+
+[00] -> default zero 
+
+
+
+immediate = 0 0000 0000 1100
+  = 0 1100 = 8+4 = 12
+
+12 bytes = 3 words = 3 instructions (down)
+
+therefore goes to instruction `xor t0, t0, t0`.
+
+
+

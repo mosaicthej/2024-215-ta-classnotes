@@ -1,0 +1,42 @@
+25% seq.
+75% con.
+
+100 inst
+
+25 seq
+75 con
+
+CPU: 1 ins / sec
+
+
+1 core (base case):
+
+  100 sec.
+  = 25 sec 
+    75 con
+
+
+2 cores:
+
+  25 sec + (75/2) sec
+  25 sec + 37.5 sec.
+  = 62.5 sec
+
+
+
+10 cores:
+
+  25 sec + (75/10) sec
+  25 sec + 7.5 sec
+  = 32.5 sec
+
+
+MANY CORES:
+
+  25 sec + (75/N) sec
+  the best: lim N->inf. {25s + (75/N)s}
+  = 25s + 0
+  = 25s
+
+  
+
