@@ -1,0 +1,4 @@
+in frame of Fib(x):
+
+fp -4 : x
+fp -8 : Fib(x-1)
