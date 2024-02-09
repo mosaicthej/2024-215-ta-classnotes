@@ -18,6 +18,7 @@
 # |    x     |    passed in param   | -4(FP)
 # | fib(x-1) | first recursive calc | -8(FP)
 #
+.globl Fib
 Fib:
 addi  sp, sp, -8
 sw    ra, 4(sp)
