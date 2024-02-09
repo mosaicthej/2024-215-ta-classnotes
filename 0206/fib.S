@@ -11,6 +11,13 @@
 # @ret:
 #   a0:  result of calculating fib(x)
 #     which is fib(x-1) + fibx(x-2)
+# what goes into the frame? (symbol-table ish thing:)
+# 
+# |    var   |            desc      | location (FP-relative) |
+# |----------|----------------------|------------------------|
+# |    x     |    passed in param   | -4(FP)
+# | fib(x-1) | first recursive calc | -8(FP)
+#
 Fib:
 addi  sp, sp, -8
 sw    ra, 4(sp)
