@@ -1,3 +1,13 @@
+*
+!*.*
+!Makefile
+!makefile
+
+
 0206/fib.o
 0206/run_fib
 0206/run_fib.o
+a1-test/q7/q7
+a1-test/q7/q7.o
+*.o
+
