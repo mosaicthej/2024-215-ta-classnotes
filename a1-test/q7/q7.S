@@ -44,12 +44,15 @@ main_loop:
   ecall # print("Enter a char\n")
 
   li  a7, SYS_readChar
-  ecall # scanf("%s", ($a0))
+  ecall # scanf("%c", ($a0))
 
   # a0 will be the char that is read...
   # this is bad... as it breaks the structure...
   # for now just keep it here... I'll think a way to refactor.
     beq   a0, s0, done_main   # in case char is newline
+    beqz  a0, done_main # when ret is 0
+    addi  a0, a0, 1     
+    beqz  a0, done_main # when ret is -1
 
   mv  a1, a0      # set arg2
   la  a0, buffer  # set arg1
