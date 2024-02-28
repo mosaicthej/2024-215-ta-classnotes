@@ -12,3 +12,5 @@ a1-test/q7/q7
 a1-test/q7/q7.o
 *.o
 
+float-test/a.out
+float-test/msg.out
