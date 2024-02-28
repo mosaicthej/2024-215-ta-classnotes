@@ -11,12 +11,18 @@ time5:
 	addi	sp,sp,-32
 	sw	s0,28(sp)
 	addi	s0,sp,32
-	sw	a0,-20(s0)
-	flw	fa4,-20(s0)
+	sw	a0,-20(s0) # the passed in (f) parameter is in
+  			   # int register a0 (per abi-convention)
+			   # save the bit pattern into -20(fp)
+
+	flw	fa4,-20(s0) # load it out to fa4
 	lui	a5,%hi(.LC0)
-	flw	fa5,%lo(.LC0)(a5)
-	fmul.s	fa5,fa4,fa5
-	fmv.x.s	a0,fa5
+	flw	fa5,%lo(.LC0)(a5) # load constant 5.0
+	fmul.s	fa5,fa4,fa5 # mul by 5
+	fmv.x.s	a0,fa5 # move the pattern into int register a0
+			# again, as per abi-convention
+			# need to first move it into int 
+			# that's where to put return val.
 	lw	s0,28(sp)
 	addi	sp,sp,32
 	jr	ra
