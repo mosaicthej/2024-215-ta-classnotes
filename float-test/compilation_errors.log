@@ -1,0 +1,470 @@
+Test Date and Time: 2024-02-27 20:56:01
+Error: -march=rv32i -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv32i -mabi=ilp32f
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv32i -mabi=lp64
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32i -mabi=lp64f
+Error: -march=rv32i -mabi=lp64d
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+cc1: error: ABI requires '-march=rv64'
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32im -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv32im -mabi=ilp32f
+Error: -march=rv32i -mabi=ilp32e
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv32im -mabi=lp64
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32i'/'-mabi=ilp32e'
+compilation terminated.
+Error: -march=rv32im -mabi=lp64d
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32im -mabi=lp64f
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32ia -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv32im -mabi=ilp32e
+Error: -march=rv32ia -mabi=ilp32f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32im'/'-mabi=ilp32e'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv32ia -mabi=lp64
+Error: -march=rv32ia -mabi=lp64d
+cc1: error: ABI requires '-march=rv64'
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32ia -mabi=lp64f
+Error: -march=rv32ia -mabi=ilp32
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ia'/'-mabi=ilp32'
+compilation terminated.
+Error: -march=rv32if -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv32ia -mabi=ilp32e
+Error: -march=rv32if -mabi=lp64
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ia'/'-mabi=ilp32e'
+compilation terminated.
+Error: -march=rv32if -mabi=lp64d
+cc1: error: ABI requires '-march=rv64'
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32if -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32if -mabi=ilp32e
+Error: -march=rv32id -mabi=lp64d
+Error: -march=rv32if -mabi=ilp32f
+Error: -march=rv32id -mabi=lp64
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32if_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+Error: -march=rv32id -mabi=ilp32e
+Error: -march=rv32id -mabi=ilp32d
+Error: -march=rv32id -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32ima -mabi=ilp32f
+Error: -march=rv32ima -mabi=ilp32d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ifd_zicsr'/'-mabi=ilp32e'
+Error: -march=rv32ima -mabi=ilp32
+Error: -march=rv32id -mabi=ilp32f
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv32ima -mabi=lp64
+cc1: error: ABI requires '-march=rv64'
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32ima -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32if_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+Error: -march=rv32ima -mabi=lp64d
+Error: -march=rv32imf -mabi=ilp32e
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ifd_zicsr'/'-mabi=ilp32d'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imf_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+Error: -march=rv32imf -mabi=ilp32f
+compilation terminated.
+Error: -march=rv32imf -mabi=ilp32d
+Error: -march=rv32ima -mabi=ilp32e
+Error: -march=rv32imd -mabi=lp64
+Error: -march=rv32imf -mabi=lp64d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ima'/'-mabi=ilp32e'
+Error: -march=rv32imf -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ima'/'-mabi=ilp32'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imf -mabi=lp64
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ifd_zicsr'/'-mabi=ilp32f'
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imd -mabi=lp64f
+compilation terminated.
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imf_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+compilation terminated.
+cc1: error: ABI requires '-march=rv64'
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imd -mabi=lp64d
+Error: -march=rv32imd -mabi=ilp32d
+Error: -march=rv32iaf -mabi=ilp32d
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imfd_zicsr'/'-mabi=ilp32d'
+compilation terminated.
+Error: -march=rv32imd -mabi=ilp32e
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imfd_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+Error: -march=rv32imd -mabi=ilp32f
+Error: -march=rv32iaf -mabi=lp64
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imfd_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32iaf -mabi=lp64d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32iaf -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32iaf -mabi=ilp32
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32iaf_zicsr'/'-mabi=ilp32'
+compilation terminated.
+Error: -march=rv32iaf -mabi=ilp32e
+Error: -march=rv32iaf -mabi=ilp32f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32iaf_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32iaf_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+Error: -march=rv32iad -mabi=lp64
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32iad -mabi=lp64d
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32iad -mabi=lp64f
+Error: -march=rv32iad -mabi=ilp32
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32iafd_zicsr'/'-mabi=ilp32'
+compilation terminated.
+Error: -march=rv32iad -mabi=ilp32d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32iafd_zicsr'/'-mabi=ilp32d'
+compilation terminated.
+Error: -march=rv32iad -mabi=ilp32e
+Error: -march=rv32iad -mabi=ilp32f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32iafd_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32iafd_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+Error: -march=rv32ifd -mabi=lp64
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32ifd -mabi=lp64d
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32ifd -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32ifd -mabi=ilp32d
+Error: -march=rv32imaf -mabi=ilp32d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ifd_zicsr'/'-mabi=ilp32d'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv32ifd -mabi=ilp32e
+Error: -march=rv32ifd -mabi=ilp32f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ifd_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32ifd_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+Error: -march=rv32imaf -mabi=lp64
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imaf -mabi=lp64d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imaf -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imaf -mabi=ilp32
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imaf_zicsr'/'-mabi=ilp32'
+compilation terminated.
+Error: -march=rv32imaf -mabi=ilp32e
+Error: -march=rv32imaf -mabi=ilp32f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imaf_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imaf_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+Error: -march=rv32imad -mabi=lp64
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imad -mabi=lp64d
+Error: -march=rv32imad -mabi=lp64f
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imad -mabi=ilp32
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32'
+compilation terminated.
+Error: -march=rv32imad -mabi=ilp32d
+Error: -march=rv32imad -mabi=ilp32e
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32d'
+compilation terminated.
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+Error: -march=rv32imad -mabi=ilp32f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+Error: -march=rv32imafd -mabi=lp64
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imafd -mabi=lp64d
+cc1: error: ABI requires '-march=rv64'
+Error: -march=rv32imafd -mabi=lp64f
+Error: -march=rv32imafd -mabi=ilp32
+cc1: error: ABI requires '-march=rv64'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32'
+compilation terminated.
+Error: -march=rv64i -mabi=ilp32
+Error: -march=rv32imafd -mabi=ilp32d
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64i -mabi=ilp32d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32d'
+compilation terminated.
+Error: -march=rv32imafd -mabi=ilp32e
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64i -mabi=ilp32e
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32e'
+compilation terminated.
+Error: -march=rv64i -mabi=ilp32f
+Error: -march=rv32imafd -mabi=ilp32f
+cc1: error: ABI requires '-march=rv32'
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv32imafd_zicsr'/'-mabi=ilp32f'
+compilation terminated.
+Error: -march=rv64i -mabi=lp64d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv64i -mabi=lp64f
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv64im -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64im -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64im -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64im -mabi=ilp32f
+Error: -march=rv64i -mabi=lp64
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64i'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64im -mabi=lp64d
+Error: -march=rv64im -mabi=lp64f
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv64ia -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ia -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ia -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ia -mabi=ilp32f
+Error: -march=rv64im -mabi=lp64
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64im'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64ia -mabi=lp64d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv64ia -mabi=lp64f
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv64if -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64if -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64if -mabi=ilp32e
+Error: -march=rv64if -mabi=ilp32f
+cc1: error: ABI requires '-march=rv32'
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ia -mabi=lp64
+Error: -march=rv64if -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ia'/'-mabi=lp64'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv64id -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64id -mabi=ilp32d
+Error: -march=rv64id -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64id -mabi=ilp32f
+Error: -march=rv64if -mabi=lp64f
+Error: -march=rv64if -mabi=lp64
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64if_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64ima -mabi=ilp32
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64if_zicsr'/'-mabi=lp64'
+compilation terminated.
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ima -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ima -mabi=ilp32e
+Error: -march=rv64ima -mabi=ilp32f
+cc1: error: ABI requires '-march=rv32'
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64id -mabi=lp64
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ifd_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64id -mabi=lp64d
+Error: -march=rv64ima -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ifd_zicsr'/'-mabi=lp64d'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv64ima -mabi=lp64f
+Error: -march=rv64id -mabi=lp64f
+cc1: error: requested ABI requires '-march' to subsume the 'F' extension
+Error: -march=rv64imf -mabi=ilp32
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ifd_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64imf -mabi=ilp32d
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imf -mabi=ilp32e
+Error: -march=rv64imf -mabi=ilp32f
+Error: -march=rv64ima -mabi=lp64
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+cc1: error: ABI requires '-march=rv32'
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imf -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ima'/'-mabi=lp64'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv64imd -mabi=ilp32
+Error: -march=rv64imd -mabi=ilp32d
+cc1: error: ABI requires '-march=rv32'
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imd -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imd -mabi=ilp32f
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imf -mabi=lp64
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imf_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64imf -mabi=lp64f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imf_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64iaf -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64iaf -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64iaf -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64iaf -mabi=ilp32f
+Error: -march=rv64imd -mabi=lp64
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imfd_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64imd -mabi=lp64d
+Error: -march=rv64iaf -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imfd_zicsr'/'-mabi=lp64d'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv64imd -mabi=lp64f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imfd_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64iad -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64iad -mabi=ilp32d
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64iad -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64iad -mabi=ilp32f
+Error: -march=rv64iaf -mabi=lp64
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64iaf_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64iaf -mabi=lp64f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64iaf_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64ifd -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ifd -mabi=ilp32d
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ifd -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ifd -mabi=ilp32f
+Error: -march=rv64iad -mabi=lp64
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64iafd_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64iad -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64iafd_zicsr'/'-mabi=lp64d'
+compilation terminated.
+Error: -march=rv64iad -mabi=lp64f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64iafd_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64imaf -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imaf -mabi=ilp32d
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imaf -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imaf -mabi=ilp32f
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64ifd -mabi=lp64
+Error: -march=rv64ifd -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ifd_zicsr'/'-mabi=lp64'
+Error: -march=rv64imaf -mabi=lp64d
+compilation terminated.
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ifd_zicsr'/'-mabi=lp64d'
+compilation terminated.
+cc1: error: requested ABI requires '-march' to subsume the 'D' extension
+Error: -march=rv64ifd -mabi=lp64f
+Error: -march=rv64imad -mabi=ilp32
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64ifd_zicsr'/'-mabi=lp64f'
+compilation terminated.
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imad -mabi=ilp32d
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imad -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imad -mabi=ilp32f
+Error: -march=rv64imaf -mabi=lp64
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imaf_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64imaf -mabi=lp64f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imaf_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64imafd -mabi=ilp32
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imafd -mabi=ilp32d
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imafd -mabi=ilp32e
+cc1: error: ABI requires '-march=rv32'
+Error: -march=rv64imafd -mabi=ilp32f
+Error: -march=rv64imad -mabi=lp64
+cc1: error: ABI requires '-march=rv32'
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imafd_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64imad -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imafd_zicsr'/'-mabi=lp64d'
+compilation terminated.
+Error: -march=rv64imad -mabi=lp64f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imafd_zicsr'/'-mabi=lp64f'
+compilation terminated.
+Error: -march=rv64imafd -mabi=lp64
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imafd_zicsr'/'-mabi=lp64'
+compilation terminated.
+Error: -march=rv64imafd -mabi=lp64d
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imafd_zicsr'/'-mabi=lp64d'
+compilation terminated.
+Error: -march=rv64imafd -mabi=lp64f
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imafd_zicsr'/'-mabi=lp64f'
+compilation terminated.

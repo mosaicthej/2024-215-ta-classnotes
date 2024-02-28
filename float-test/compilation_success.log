@@ -1,0 +1,8 @@
+Test Date and Time: 2024-02-27 20:56:01
+Success: -march=rv32im -mabi=ilp32
+Success: -march=rv32i -mabi=ilp32
+Success: -march=rv32id -mabi=ilp32
+Success: -march=rv32if -mabi=ilp32
+Success: -march=rv32imf -mabi=ilp32
+Success: -march=rv32imd -mabi=ilp32
+Success: -march=rv32ifd -mabi=ilp32

@@ -1,0 +1,7 @@
+ilp32
+ilp32d 
+ilp32e 
+ilp32f 
+lp64 
+lp64d 
+lp64f
