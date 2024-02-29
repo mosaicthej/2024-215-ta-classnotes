@@ -1,0 +1,171 @@
+we use ilp32 abi for emulation,
+with no `f` extension.
+
+That means, for function call and system call,
+
+the convention is to, for a call routine:
+```c
+int foo(...){
+	...
+	float a, z;
+	int b;
+	...
+	z = bar(a, b);
+}
+
+float bar(float x, int y){
+	...
+	...
+	return ....
+}
+```
+
+  https://five-embeddev.com/riscv-isa-manual/latest/f.html#single-precision-floating-point-conversion-and-move-instructions
+  
+  RISCV ISA states:
+  Instructions are provided to move bit patterns between the floating-point and integer registers. 
+  `FMV.X.W` moves: 
+  the single-precision value 
+  in floating-point register rs1 represented in IEEE 754-2008 encoding 
+  to the lower 32 bits of integer register rd. 
+  The bits are not modified in the transfer, and in particular, the payloads of non-canonical NaNs are preserved. 
+  For RV64, the higher 32 bits of the destination register are filled with copies of the floating-point number’s sign bit.
+
+  `FMV.W.X` moves:
+  the single-precision value encoded in IEEE 754-2008 standard encoding 
+  from the lower 32 bits of integer register rs1 
+  to the floating-point register rd. 
+  The bits are not modified in the transfer, and in particular, the payloads of non-canonical NaNs are preserved.
+
+
+So, in shorter words:
+
+  `FMV.X.W` rd_int, rs_float
+  moves the bit pattern `rd (int)` <- `rs (float)`
+  
+  `FMV.W.X` rd_float, rs_int
+  moves the bit pattern `rd (float)` <- `rs (int)`
+
+  Think W=(32 bit wide float), X=(int register)
+  then `FMV.X.W` means X <- W, int <- float, "int from float"
+       `FMV.W.X` means W <- X, float <- int, "float from int"
+
+ Previously, it's been commonly referred as `FMV.X.S` and `FMV.S.X`, whereas
+ `S` stands for `single-precision float`. 
+ RISCV updated the naming convention (changed `S` into `W`) so it is more 
+ explicit that the float is indeed 32 bit wide (W=word_size=32bit)
+
+ However, the exisiting assembler still uses letter `S` just because it
+ would work together with older existing systems 
+ (example of brownfield engineering)
+
+
+
+
+ -> Before calling bar();
+
+ 1. get the floating point parameter
+ 2. move the bit pattern into an integer register
+    (same function call conventions)
+ 3. `call <function_label>
+
+ -> After bar() returns.
+
+ 1. The return value will be in integer register a0
+	but it has no meaning as an integer.
+ 2. Move the bit pattern into a float point register
+ 3. now you can use this floating point value.
+
+
+
+
+
+If you are coding a function that takes and returns 
+  floating point values.
+
+ -> First thing when entering the function.
+
+ 1. If you have any floating point parameters, 
+ They will be passed in your integer registers.
+ Before you can work on them as floating point numbers
+ you'd need to either:
+ 1.1 
+  - save it (the bit pattern) to a memory 
+  (if you not going to need it for a while)
+
+  (assuming that the fp is set up)
+  ```asm
+  sw	a0, -20(fp)	# save it to -20 offset from fp.
+  ... (doing other things)
+  flw 	ft0, -20(fp)    # read it into ft0 
+  ... (using the number now)
+  ```
+  or
+
+  1.2
+  - Move the bit pattern into a floating point register
+  (preferred. Memory is SLOW therefore evil
+  we want to avoid that as much as possible)
+
+  ```asm
+  fmv.s.x   ft0, a0  # move the pattern `ft0 <- a0`
+  ... (use it now)
+  ...
+  ```
+
+ 2.
+ Similiarly, upon returning,
+ we do not assume the caller has a FPU therefore F-registers.
+ (Or, we do not assume that this function is called by some processors who
+ has a FPU.)
+ So, in case we are returning a floating point number, we do NOT put the 
+ return value in F-register, but put in standard return register, `a0`.
+ 
+ ```asm
+ ... (some calculation)
+ fmv.x.s   a0, ft0    # move the pattern `a0 <- ft0`
+ ... (restore stacks, etc...)
+ ret
+ ```
+
+ So, the rule-of-thumb is.
+ When using an abi that does not have `F` extensions. We are NOT assuming
+ that our callers and callees handle floating-points. 
+ 
+ Remember functions (except "the function" itself) are black-boxes.
+
+ For a funtion that is publicly known (when we compile code first to `.o`,
+ technically, it is ready to be linked on to ANY piece of *other* code,
+ given we known the label information (header files) ).
+ What can be assumed about the caller (and callees, for example, another piece
+ of code from another module, or library function) 
+ are specified in ABIs (application binary interface).
+
+ If the ABI did not states the F extension, then we should NOT assume that 
+ others have FPU and F-registers, (doesn't keep them from having it, but we
+ should not know whether they have it or not). 
+ Imagine having your floating-point argument in `fa0` and calls a function,
+ but they might never get it (per-ABI, they don't assume you have FPU and won't
+ looking for stuff from F-registers)
+ "But.... but I give the arguments... It's FP, and it's in fa0"
+ "Hey dude I'd never know that... I didn't even know if you have FPU or not so
+ I don't bother to look, not my fault I never get it bro..."
+
+
+ If we are lucky....
+ (and in the future, when processors become better and FPU become more standard,
+ we might be lucky enough so the ABI would more likely to have an F extension)
+
+ So that until then, when we see letter F in `mabi`, we could be then assuming
+ whoever the caller and callee, they would also have F-registers, and then 
+ we could follow the convention of that ABI which have fa<x> as all floating
+ point parameters, and fa0 as return for floating point numbers. Then we do
+ not need to convert before we call and return... Not until then...
+
+
+ (if your function's accessibility is local, then you **might be able** (check
+ with Noah before you make such decision on your assignments) to come up with
+ your own "internal-standard" which allows you to directly pass arguments
+ directly within F-register files.
+ But that can only be when the function is local, 
+ and the standard is consistent across your project)
