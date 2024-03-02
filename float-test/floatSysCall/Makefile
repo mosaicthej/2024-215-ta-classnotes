@@ -9,7 +9,7 @@ XAS=$(TOOLCHAIN)$(AS)
 XLD=$(TOOLCHAIN)$(LD)
 XGDB=$(TOOLCHAIN)$(DB)
 
-ASFLAGS=-march=rv32if -mabi=ilp32
+ASFLAGS=-march=rv32if_zfa -mabi=ilp32
 LDFLAGS=-melf32lriscv --no-relax
 
 binaries= floatSysTest
@@ -24,7 +24,7 @@ floatSysTest: floatSysTest.o
 	$(XLD) $(LDFLAGS) $< -o $@
 
 floatSysTest.o: floatSysTest.S
-	$(XAS) $(ASFLAGS) $< -o $@
+	$(XAS) $(ASFLAGS) $< -o $@ -g
 
 clean:
 	rm -f $(binaries) *.o
