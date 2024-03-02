@@ -14,7 +14,9 @@ LDFLAGS=-melf32lriscv --no-relax
 
 binaries= floatSysTest
 
-QEMUPATH=/student/cmpt215/bin/qemu215-floatio/bin/qemu-riscv32
+QEMUPATH=/student/cmpt215/qemu/bin/qemu-riscv32
+#QEMUPATH=/student/cmpt215/bin/qemu215-floatio/bin/qemu-riscv32
+
 
 .PHONY: all clean qemu
 
