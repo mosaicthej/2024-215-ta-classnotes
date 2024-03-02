@@ -74,6 +74,8 @@ la	a0, stInt
 
 li	a7, SYS_printFloat
 fmv.x.s a0, ft0 # int * pi
+li	a1, 'E' # mode for scientific
+li 	a2, 5  # precision
   ecall
   blt	a0, zero, _printErr
 
@@ -84,10 +86,18 @@ la	a0, stFlo
   blt 	a0, zero, _printErr
 
 li	a7, SYS_printFloat
+li	a1, 28 # anything not 'E'
+li	a2, 50 # won't print this much...
 fmv.x.s a0, ft1 # float * pi
   ecall
   blt	a0, zero, _printErr
 
+li 	a0, '\n'
+li	a7, SYS_printChar
+  ecall
+  blt 	a0, zero, _printErr
+
+mv	a0, zero # exit normally
 li	a7, SYS_exit
 ecall
 	
