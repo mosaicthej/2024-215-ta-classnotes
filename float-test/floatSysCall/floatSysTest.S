@@ -24,10 +24,11 @@ _start:
 # read an float
 # print product int * pi
 # print product float * pi
-	# 2 ways to do:
+	# 3 ways to do:
 	fli.s     ft2, 0x1p-3 # this is 0.125 = 2^-3
+	fli.s     ft2, 1.25e-1
+	fli.s	  ft2, 0.125
 	# you can also do scientific notation
-	# fli   ft2, 6.02e-23
 	# however, this requires _zfa extension
 	# https://github.com/riscv-non-isa/riscv-asm-manual/blob/master/riscv-asm.md#load-floating-point-immediate
 
@@ -86,7 +87,7 @@ la	a0, stFlo
   blt 	a0, zero, _printErr
 
 li	a7, SYS_printFloat
-li	a1, 28 # anything not 'E'
+li	a1, -1 # anything not 'E'
 li	a2, 50 # won't print this much...
 fmv.x.s a0, ft1 # float * pi
   ecall
