@@ -2,10 +2,12 @@ TOOLCHAIN=/usr/local/riscvmulti/bin/riscv64-unknown-elf-
 CC=gcc
 AS=as
 LD=ld
+DB=gdb
 
 XCC=$(TOOLCHAIN)$(CC)
 XAS=$(TOOLCHAIN)$(AS)
 XLD=$(TOOLCHAIN)$(LD)
+XGDB=$(TOOLCHAIN)$(DB)
 
 ASFLAGS=-march=rv32if -mabi=ilp32
 LDFLAGS=-melf32lriscv --no-relax
@@ -31,3 +33,10 @@ qemu: floatSysTest
 	$(QEMUPATH) $<
 
 
+qemu-gdb: floatSysTest
+	echo "port 1234"
+	$(QEMUPATH) -g 1234 $<
+
+gdb: floatSysTest
+	echo "make sure qemu is on debuging mode"
+	$(XGDB) $<
